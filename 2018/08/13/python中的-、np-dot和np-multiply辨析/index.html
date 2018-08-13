@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,github,JavaScript," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="hexo,github,JavaScript">
+<meta name="description" content="在之前学习别人开源代码的时候，对于python中的*、np.dot()和np.multiply()具体结果产生了疑惑，遂去了解了一下相关说明，并实验了一下，结合别人的博客，这里进行总结  建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错 * 号运算符   numpy arrays consistently abide by the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/06/26/hello-world/index.html">
+<meta property="og:title" content="python中的*、np.dot和np.multiply辨析">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/python中的-、np-dot和np-multiply辨析/index.html">
 <meta property="og:site_name" content="AgentJames">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="在之前学习别人开源代码的时候，对于python中的*、np.dot()和np.multiply()具体结果产生了疑惑，遂去了解了一下相关说明，并实验了一下，结合别人的博客，这里进行总结  建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错 * 号运算符   numpy arrays consistently abide by the">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T12:12:19.297Z">
+<meta property="og:updated_time" content="2018-08-13T15:06:11.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="python中的*、np.dot和np.multiply辨析">
+<meta name="twitter:description" content="在之前学习别人开源代码的时候，对于python中的*、np.dot()和np.multiply()具体结果产生了疑惑，遂去了解了一下相关说明，并实验了一下，结合别人的博客，这里进行总结  建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错 * 号运算符   numpy arrays consistently abide by the">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/26/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/python中的-、np-dot和np-multiply辨析/"/>
 
 
 
 
 
-  <title>Hello World | AgentJames</title>
+  <title>python中的*、np.dot和np.multiply辨析 | AgentJames</title>
   
 
 
@@ -293,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/python中的-、np-dot和np-multiply辨析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lau James">
@@ -310,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">python中的*、np.dot和np.multiply辨析</h1>
         
 
         <div class="post-meta">
@@ -322,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T10:49:10+08:00">
-                2018-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T23:05:45+08:00">
+                2018-08-13
               </time>
             
 
@@ -332,28 +331,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -382,15 +359,48 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p> 在之前学习别人开源代码的时候，对于python中的*、np.dot()和np.multiply()具体结果产生了疑惑，遂去了解了一下相关说明，并实验了一下，结合别人的博客，这里进行总结</p>
+<hr>
+<h3 id="建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错"><a href="#建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错" class="headerlink" title="建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错"></a>建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错</h3><ol>
+<li>* 号运算符</li>
+</ol>
+<blockquote>
+<p>numpy arrays consistently abide by the rule that operations are applied element-wise. Thus, if a and b are numpy arrays, then a*b is the array formed by multiplying the components element-wise。 </p>
+</blockquote>
+<ul>
+<li>对于ndarray, * 表示的是multiplying the components element-wise，按位相乘， 必要时需要广播，广播细节可以看下面的例子</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">a = np.array(range(6)).reshape((2, 3))</span><br><span class="line">b = np.array([1, 0, 1])</span><br><span class="line">print(b.shape)</span><br><span class="line"># shape=(3,)</span><br><span class="line">bt = b.T</span><br><span class="line">print(bt.shape)</span><br><span class="line"># shape=(3,)</span><br><span class="line">print(a)</span><br><span class="line"># [[0 1 2]</span><br><span class="line">#  [3 4 5]]</span><br><span class="line">print(b)</span><br><span class="line"># [1 0 1]</span><br><span class="line">c = a * b</span><br><span class="line">print(c)</span><br><span class="line"># broadcast operation</span><br><span class="line"># [[0 0 2]</span><br><span class="line">#  [3 0 5]]</span><br><span class="line">d = a * b.T</span><br><span class="line">print(d)</span><br><span class="line">#[[0 0 2]</span><br><span class="line"># [3 0 5]]</span><br></pre></td></tr></table></figure>
+<p>这里的广播，举个简单的例子：<br>（2，3）的array  * （3,）的array，会自动广播，变成（2，3）和（2，3）的array按位相乘</p>
+<ul>
+<li>对于 matrix，*表示矩阵乘法，运算保证矩阵乘法的法则，例子如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">A = np.matrix(a)</span><br><span class="line">B = np.matrix(b)</span><br><span class="line">print(&apos;A:&apos; + str(A))</span><br><span class="line"># A:[[0 1 2]</span><br><span class="line">     [3 4 5]]</span><br><span class="line"></span><br><span class="line">B:[[1 0 1]]</span><br><span class="line">B.shape:(1, 3)</span><br><span class="line">print(&apos;A:&apos; + str(A.shape))</span><br><span class="line"># A.shape:(2, 3)</span><br><span class="line">print(&apos;B:&apos; + str(B))</span><br><span class="line"># B:[[1 0 1]]</span><br><span class="line">print(&apos;shape:&apos; + str(B.shape))</span><br><span class="line"># B.shape:(1, 3)</span><br><span class="line">C = A * B</span><br><span class="line">#  Traceback (most recent call last):</span><br><span class="line">#  	File &quot;D:/IR/MLPY/Tagging/temp.py&quot;, line 37, in &lt;module&gt;</span><br><span class="line">#    	C = A * B</span><br><span class="line">#  	File &quot;D:\Anaconda\lib\site-packages\numpy\matrixlib\defmatrix.py&quot;, 	</span><br><span class="line">#        line 343, in __mul__</span><br><span class="line">#    return N.dot(self, asmatrix(other))</span><br><span class="line">#	ValueError: shapes (2,3) and (1,3) not aligned: 3 (dim 1) != 1 (dim 0)</span><br><span class="line">C = A * B.T</span><br><span class="line"># C:[[2]</span><br><span class="line">#    [8]]</span><br><span class="line"># C.shape:(2, 1)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>np.dot()<blockquote>
+<p>官方文档：Dot product of two arrays.<br>For 2-D arrays it is equivalent to matrix multiplication, and for 1-D arrays to inner product of vectors (without complex conjugation). For N dimensions it is a sum product over the last axis of a and the second-to-last of b</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p>对于ndarray ,一般情况下，都是进行矩阵乘法或者向量的内积运算。但这仅仅是等价于矩阵相乘，但等于就是矩阵相乘。对于ndarray，有时，dot的运算并不要求操作数像矩阵相乘的要求那么严格，当然相乘的结果的格式也不是矩阵，而是数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(np.dot(a, b))</span><br><span class="line"># [2, 8]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但是对于matrix，矩阵相乘就是矩阵相乘，严格要求，所以必须满足矩阵相乘的条件</p>
+</li>
+</ul>
+<ol start="3">
+<li>np.multiply()<blockquote>
+<p>multiply是numpy的ufunc函数，执行方法是对应元素相乘，而不是线性代数中的矩阵运算方式，类似于matlab中的点乘，当矩阵的维度不相同时，会根据一定的广播规则将维数扩充到一致的形式. 如果不能广播相同的size，multiply就会失败</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">np.multiply(a,b)                                                             # [[0, 0, 2],</span><br><span class="line">#  [3, 0, 5]]</span><br><span class="line">np.multiply(a,b.T)</span><br><span class="line"># [[0, 0, 2],</span><br><span class="line">#  [3, 0, 5]]</span><br><span class="line">np.multiply(A,B)                                                             # [[0, 0, 2],</span><br><span class="line">#  [3, 0, 5]]</span><br><span class="line">np.multiply(A,B.T)                                                           # Traceback (most recent call last):</span><br><span class="line">    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">ValueError: operands could not be broadcast together with shapes (2,3) (3,1)</span><br></pre></td></tr></table></figure>
+<p>(2,3) 去和(1,3)按位乘，后者广播成为(2,3)<br>(2,3) 去和(3,1)按位乘，后者任一维度广播不能成为（2，3），遂报错</p>
+<hr>
+<blockquote>
+<p>参考：<a href="https://blog.csdn.net/iamzhangzhuping/article/details/52370241" target="_blank" rel="noopener">numpy * dot multiply</a></p>
+</blockquote>
 
       
     </div>
@@ -406,16 +416,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-        </div>
-      
 
       
       
@@ -425,15 +425,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/13/docker容器通信和端口暴露问题中的机制/" rel="next" title="docker容器通信和端口暴露问题中的机制">
+                <i class="fa fa-chevron-left"></i> docker容器通信和端口暴露问题中的机制
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/26/first-test/" rel="prev" title="first test">
-                first test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -581,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错"><span class="nav-number">1.</span> <span class="nav-text">建议：当我们需要在python中进行像matlab中的矩阵运算时，最好将ndarray转化成matrix，以免出错</span></a></li></ol></div>
             
 
           </div>
