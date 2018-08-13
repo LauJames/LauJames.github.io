@@ -79,14 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="一直以来用docker容器间通信都是使用的link的方式，这就限制各个容器启动的前后顺序，总感觉很不灵活，因此这次探索了一下直接通过docker自带网卡分配的局域网来进行容器间的访问。   docker的端口暴露指的是，经过docker0这个网卡的转发，将容器本身的端口服务转发到暴露端口上，比如执行：  1docker run -dit -p 8080:12345 --name=containe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker容器通信和端口暴露问题中的机制">
+<meta property="og:url" content="http://yoursite.com/2018/08/13/docker容器通信和端口暴露问题中的机制/index.html">
 <meta property="og:site_name" content="AgentJames">
+<meta property="og:description" content="一直以来用docker容器间通信都是使用的link的方式，这就限制各个容器启动的前后顺序，总感觉很不灵活，因此这次探索了一下直接通过docker自带网卡分配的局域网来进行容器间的访问。   docker的端口暴露指的是，经过docker0这个网卡的转发，将容器本身的端口服务转发到暴露端口上，比如执行：  1docker run -dit -p 8080:12345 --name=containe">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-26T11:52:23.206Z">
+<meta property="og:updated_time" content="2018-08-13T14:58:10.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="docker容器通信和端口暴露问题中的机制">
+<meta name="twitter:description" content="一直以来用docker容器间通信都是使用的link的方式，这就限制各个容器启动的前后顺序，总感觉很不灵活，因此这次探索了一下直接通过docker自带网卡分配的局域网来进行容器间的访问。   docker的端口暴露指的是，经过docker0这个网卡的转发，将容器本身的端口服务转发到暴露端口上，比如执行：  1docker run -dit -p 8080:12345 --name=containe">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/13/docker容器通信和端口暴露问题中的机制/"/>
 
 
 
 
 
-  <title>tags | AgentJames</title>
+  <title>docker容器通信和端口暴露问题中的机制 | AgentJames</title>
   
 
 
@@ -277,40 +280,148 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/docker容器通信和端口暴露问题中的机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lau James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AgentJames">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 8 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Cuda/" style="font-size: 12px; color: #ccc">Cuda</a> <a href="/tags/Deep-Learning/" style="font-size: 12px; color: #ccc">Deep Learning</a> <a href="/tags/JavaScript/" style="font-size: 30px; color: #111">JavaScript</a> <a href="/tags/Machine-Learning/" style="font-size: 12px; color: #ccc">Machine Learning</a> <a href="/tags/MarkDown/" style="font-size: 12px; color: #ccc">MarkDown</a> <a href="/tags/Ubuntu/" style="font-size: 12px; color: #ccc">Ubuntu</a> <a href="/tags/github/" style="font-size: 30px; color: #111">github</a> <a href="/tags/hexo/" style="font-size: 30px; color: #111">hexo</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">docker容器通信和端口暴露问题中的机制</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T22:57:03+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <hr>
+<p>一直以来用docker容器间通信都是使用的link的方式，这就限制各个容器启动的前后顺序，总感觉很不灵活，因此这次探索了一下直接通过docker自带网卡分配的局域网来进行容器间的访问。</p>
+<hr>
+<ul>
+<li>docker的端口暴露指的是，经过docker0这个网卡的转发，将容器本身的端口服务转发到暴露端口上，比如执行：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -dit -p 8080:12345 --name=container_name image_name</span><br></pre></td></tr></table></figure>
+<p> 使用docker0网卡分配的172.17.0.x这个局域网访问的时候，使用12345端口。在使用192.168.1.x或其他本机公网ip访问的时候，就是要用8080来访问了</p>
+<blockquote>
+<p>时间有限，暂时不仔细分析了，有时间放图分析一下</p>
+</blockquote>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/26/Ubuntu16-04-3LTS-CUDA8-0-cudnn5-1-tensorflow-gpu-1-2-安装配置信息汇总/" rel="next" title="Ubuntu16.04.3LTS+CUDA8.0+cudnn5.1+tensorflow-gpu(1.2)安装配置信息汇总">
+                <i class="fa fa-chevron-left"></i> Ubuntu16.04.3LTS+CUDA8.0+cudnn5.1+tensorflow-gpu(1.2)安装配置信息汇总
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
