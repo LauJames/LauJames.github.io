@@ -289,6 +289,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/回文链表——O-n-时间复杂度和O-1-空间复杂度解法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lau James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AgentJames">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/15/回文链表——O-n-时间复杂度和O-1-空间复杂度解法/" itemprop="url">回文链表——O(n)时间复杂度和O(1)空间复杂度解法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T14:28:37+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>参考链接：<a href="https://blog.csdn.net/coder_orz/article/details/51306985" target="_blank" rel="noopener">234. Palindrome Linked List [easy] (Python)</a></p>
+<blockquote>
+<p>这个博主总结了三种解法：</p>
+<ol>
+<li>将单链表的节点值记录到一个数组中，判断数组是否回文；（或通过一次遍历将单链表拓展成双向链表，再判断是否回文。 ）——时间 O(n)，空间O(n)</li>
+<li>判断回文主要是前半部分和后半部分的比较，若能将前半部分压栈，再依次出栈与后半部分比较，则可判断是否回文。——时间 O(n)，空间O(n/2)</li>
+<li>类似思路二，判断回文主要是前半部分和后半部分的比较，若能将后半部分反转（仍然是单链表），则可以方便的判断回文。——时间 O(n)，空间O(1)</li>
+</ol>
+</blockquote>
+<p><em>实验发现，该博主提供的代码存在bug，但是思路没问题，遂修改汇总一番</em></p>
+<h6 id="主要用到的知识点为："><a href="#主要用到的知识点为：" class="headerlink" title="主要用到的知识点为："></a>主要用到的知识点为：</h6><ul>
+<li>“快慢指针” ，关于快慢指针的原理与应用，可以参考<a href="https://www.cnblogs.com/hxsyl/p/4395794.html" target="_blank" rel="noopener">关于快慢指针的若干应用详解</a></li>
+<li>“翻转链表”，可以参考<a href="https://blog.csdn.net/fx677588/article/details/72357389" target="_blank" rel="noopener">链表翻转的图文讲解（递归与迭代两种实现）</a></li>
+</ul>
+<hr>
+<p>我实现了第三种，时间复杂度 O(n)，空间复杂度O(1)的算法，先找到中位节点，然后翻转后半部分，然后逐一比较。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode(object):</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val = x</span><br><span class="line">#         self.next = None</span><br><span class="line"></span><br><span class="line">class Solution(object):</span><br><span class="line">    def isPalindrome(self, head):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type head: ListNode</span><br><span class="line">        :rtype: bool</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        if (head is None) or (head.next is None):</span><br><span class="line">            return True</span><br><span class="line">        # slow fast pointer, find the middle point</span><br><span class="line">        middleNode = self.middleNode(head)</span><br><span class="line">        # reverse the last half of the linkList</span><br><span class="line">        slow = self.reverseList(middleNode)</span><br><span class="line">        while slow is not None:</span><br><span class="line">            if head.val != slow.val:</span><br><span class="line">                return False</span><br><span class="line">            head = head.next</span><br><span class="line">            slow = slow.next</span><br><span class="line">        return True</span><br><span class="line">            </span><br><span class="line">    def reverseList(self, head):</span><br><span class="line">        if head is None:</span><br><span class="line">             return None</span><br><span class="line">        present = head</span><br><span class="line">        new_head = None</span><br><span class="line">        while present is not None:</span><br><span class="line">            cur = present.next</span><br><span class="line">            present.next = new_head</span><br><span class="line">            new_head = present</span><br><span class="line">            present = cur</span><br><span class="line">        return new_head</span><br><span class="line">    </span><br><span class="line">    def middleNode(self, head):</span><br><span class="line">        fast = head</span><br><span class="line">        slow = head</span><br><span class="line">        while (fast is not None) and (slow is not None):</span><br><span class="line">            if fast.next is None:</span><br><span class="line">                return slow</span><br><span class="line">            elif (fast.next is not None) and (fast.next.next is None):</span><br><span class="line">                return slow.next</span><br><span class="line">            else:</span><br><span class="line">                fast = fast.next.next</span><br><span class="line">                slow = slow.next</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/13/python中的-、np-dot和np-multiply辨析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1102,7 +1237,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
