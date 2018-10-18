@@ -289,6 +289,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/tornado-静态文件路径绑定细节/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lau James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AgentJames">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/18/tornado-静态文件路径绑定细节/" itemprop="url">tornado 静态文件路径绑定细节</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T20:57:26+08:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先上web模块项目结构图：<br><img src="https://img-blog.csdn.net/20181018202446215?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VFU1RDX1Y=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="项目树形图"></p>
+<hr>
+<p>首先要将/static（注意，只能以static，不能带s）和/templates文件夹绑定到tornado.web.Application当中，这样才能让服务器加载渲染html、css、JavaScript等项目文件，具体实现代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def make_app():</span><br><span class="line">	setting = dict(</span><br><span class="line">       	template_path=os.path.join(os.path.dirname(__file__), &quot;templates&quot;),</span><br><span class="line">       	static_path=os.path.join(os.path.dirname(__file__), &quot;static&quot;),</span><br><span class="line">   	)</span><br><span class="line">   	return tornado.web.Application([(r&apos;/Demo&apos;, DemoHandler),</span><br><span class="line">                                   ],</span><br><span class="line">                                  **setting</span><br><span class="line">                                  )</span><br></pre></td></tr></table></figure>
+<p>然后修改html当中对css、js文件的引入方式，一定要多加一对引号啊！！！</p>
+<p>以bootstrap.min.css文件为例<br><img src="https://img-blog.csdn.net/2018101821112622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1VFU1RDX1Y=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>第一行为错误写法。<br>这里很容易忽略，因为当你写成第二行这种形式，IDE会提示错误（实际也没错），所以建议最好用\’和\”交替的形式，如下第三行的写法。</p>
+<hr>
+<blockquote>
+<p>后来想想，觉得我这种错误很低级，如果把static_url当作方法，传入的变量本来就不能直接以bootstrap.min.css这种直接传，好歹变成字符串吧…用单引号和双引号都算。<br>既然花了我这么久才发现这个问题，有必要记录一下！</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/回文链表——O-n-时间复杂度和O-1-空间复杂度解法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1237,7 +1366,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
