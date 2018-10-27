@@ -289,6 +289,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lau James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AgentJames">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/" itemprop="url">《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T10:10:53+08:00">
+                2018-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概念区分"><a href="#概念区分" class="headerlink" title="概念区分"></a>概念区分</h1><ul>
+<li><strong>标量（scalar）</strong>: 一个单独的数</li>
+<li><strong>向量（vector）</strong>: 一个向量是一列数</li>
+<li><strong>矩阵（matrix）</strong>: 矩阵是一个二维数组</li>
+<li><strong>张量（tensor）</strong>: 若干维（一般超过两维）的数组</li>
+</ul>
+<hr>
+<h1 id="常用基础概念"><a href="#常用基础概念" class="headerlink" title="常用基础概念"></a>常用基础概念</h1><ul>
+<li><strong>广播（broadcasting）</strong>: 存在如下公式：$&amp;#123&amp;#123C&amp;#125_&amp;#123ij&amp;#125&amp;#125=&amp;#123&amp;#123A&amp;#125_&amp;#123i,j&amp;#125&amp;#125+&amp;#123&amp;#123b&amp;#125_&amp;#123j&amp;#125&amp;#125$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩阵和向量相加，产生另外一个矩阵。向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 和矩阵 $&amp;#123&amp;#123A&amp;#125&amp;#125$ 的每一行相加，无须在加法操作前定义一个将向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 复制到每一行而生成的矩阵。<strong>这种隐式的复制向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 到很多位置的方式，就是广播。</strong></li>
+<li><p><strong>生成子空间</strong>：原始向量线性组合后所能抵达的点的集合（确定$Ax=b$ 是否有解，相当于确定向量 $b$ 是否在$A$列向量的生成子空间中。这个特殊的生成子空间被称为$A$的 <strong>列空间(column space)</strong> 或者 $A$ 的<strong>值域(range)</strong>）。</p>
+</li>
+<li><p><strong>线性相关</strong>与<strong>线性无关</strong>：如果一组向量中的任意一个向量都不能表示成其他向量的线性组合，那么这组向量称为<strong>线性无关(linearly independent)</strong> ，反之则是<strong>线性相关(linear dependent)</strong>。</p>
+</li>
+<li>一个列向量线性相关的方阵（$m=n$）被称为<strong>奇异的(singular)</strong>。</li>
+<li>两个向量的<strong>点积</strong>用$L^2$范数表示：$&amp;#123&amp;#123x&amp;#125^&amp;#123T&amp;#125&amp;#125y=&amp;#123&amp;#123\left| x \right|&amp;#125_&amp;#1232&amp;#125&amp;#125&amp;#123&amp;#123\left| y \right|&amp;#125_&amp;#1232&amp;#125&amp;#125\cos \theta$</li>
+<li><strong>迹运算</strong>：返回的是矩阵对角元素的和。$Tr(A)=\sum\limits_&amp;#123i&amp;#125&amp;#123&amp;#123&amp;#123A&amp;#125_&amp;#123i,i&amp;#125&amp;#125&amp;#125$</li>
+</ul>
+<hr>
+<blockquote>
+<p>后面需要什么再补充吧~暂时这一块儿就这么多</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/tornado-静态文件路径绑定细节/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1366,7 +1506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
