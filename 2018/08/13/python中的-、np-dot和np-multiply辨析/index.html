@@ -19,7 +19,6 @@
 
 
 
-
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -376,7 +375,7 @@
 <li>对于 matrix，*表示矩阵乘法，运算保证矩阵乘法的法则，例子如下：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">A = np.matrix(a)</span><br><span class="line">B = np.matrix(b)</span><br><span class="line">print(&apos;A:&apos; + str(A))</span><br><span class="line"># A:[[0 1 2]</span><br><span class="line">     [3 4 5]]</span><br><span class="line"></span><br><span class="line">B:[[1 0 1]]</span><br><span class="line">B.shape:(1, 3)</span><br><span class="line">print(&apos;A:&apos; + str(A.shape))</span><br><span class="line"># A.shape:(2, 3)</span><br><span class="line">print(&apos;B:&apos; + str(B))</span><br><span class="line"># B:[[1 0 1]]</span><br><span class="line">print(&apos;shape:&apos; + str(B.shape))</span><br><span class="line"># B.shape:(1, 3)</span><br><span class="line">C = A * B</span><br><span class="line">#  Traceback (most recent call last):</span><br><span class="line">#  	File &quot;D:/IR/MLPY/Tagging/temp.py&quot;, line 37, in &lt;module&gt;</span><br><span class="line">#    	C = A * B</span><br><span class="line">#  	File &quot;D:\Anaconda\lib\site-packages\numpy\matrixlib\defmatrix.py&quot;, 	</span><br><span class="line">#        line 343, in __mul__</span><br><span class="line">#    return N.dot(self, asmatrix(other))</span><br><span class="line">#	ValueError: shapes (2,3) and (1,3) not aligned: 3 (dim 1) != 1 (dim 0)</span><br><span class="line">C = A * B.T</span><br><span class="line"># C:[[2]</span><br><span class="line">#    [8]]</span><br><span class="line"># C.shape:(2, 1)</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>np.dot()<blockquote>
 <p>官方文档：Dot product of two arrays.<br>For 2-D arrays it is equivalent to matrix multiplication, and for 1-D arrays to inner product of vectors (without complex conjugation). For N dimensions it is a sum product over the last axis of a and the second-to-last of b</p>
 </blockquote>
@@ -389,7 +388,7 @@
 <li><p>但是对于matrix，矩阵相乘就是矩阵相乘，严格要求，所以必须满足矩阵相乘的条件</p>
 </li>
 </ul>
-<ol start="3">
+<ol>
 <li>np.multiply()<blockquote>
 <p>multiply是numpy的ufunc函数，执行方法是对应元素相乘，而不是线性代数中的矩阵运算方式，类似于matlab中的点乘，当矩阵的维度不相同时，会根据一定的广播规则将维数扩充到一致的形式. 如果不能广播相同的size，multiply就会失败</p>
 </blockquote>
@@ -792,6 +791,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

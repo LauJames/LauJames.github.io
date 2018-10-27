@@ -19,7 +19,6 @@
 
 
 
-
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -79,17 +78,17 @@
 
 
 
-<meta name="description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：$&amp;amp;#123&amp;amp;#123C&amp;amp;#125_&amp;amp;#123ij&amp;amp;#125&amp;amp;#125=&amp;amp;#123&amp;am">
+<meta name="description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：${ {C}_{ij} }={ {A}_{i,j} }+{ {b}_{j} }$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数">
 <meta property="og:url" content="http://yoursite.com/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/index.html">
 <meta property="og:site_name" content="AgentJames">
-<meta property="og:description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：$&amp;amp;#123&amp;amp;#123C&amp;amp;#125_&amp;amp;#123ij&amp;amp;#125&amp;amp;#125=&amp;amp;#123&amp;am">
+<meta property="og:description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：${ {C}_{ij} }={ {A}_{i,j} }+{ {b}_{j} }$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-27T02:32:31.407Z">
+<meta property="og:updated_time" content="2018-10-27T07:02:48.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数">
-<meta name="twitter:description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：$&amp;amp;#123&amp;amp;#123C&amp;amp;#125_&amp;amp;#123ij&amp;amp;#125&amp;amp;#125=&amp;amp;#123&amp;am">
+<meta name="twitter:description" content="概念区分 标量（scalar）: 一个单独的数 向量（vector）: 一个向量是一列数 矩阵（matrix）: 矩阵是一个二维数组 张量（tensor）: 若干维（一般超过两维）的数组   常用基础概念 广播（broadcasting）: 存在如下公式：${ {C}_{ij} }={ {A}_{i,j} }+{ {b}_{j} }$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩">
 
 
 
@@ -321,7 +320,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T10:10:53+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T14:55:56+08:00">
                 2018-10-27
               </time>
             
@@ -367,14 +366,14 @@
 </ul>
 <hr>
 <h1 id="常用基础概念"><a href="#常用基础概念" class="headerlink" title="常用基础概念"></a>常用基础概念</h1><ul>
-<li><strong>广播（broadcasting）</strong>: 存在如下公式：$&amp;#123&amp;#123C&amp;#125_&amp;#123ij&amp;#125&amp;#125=&amp;#123&amp;#123A&amp;#125_&amp;#123i,j&amp;#125&amp;#125+&amp;#123&amp;#123b&amp;#125_&amp;#123j&amp;#125&amp;#125$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩阵和向量相加，产生另外一个矩阵。向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 和矩阵 $&amp;#123&amp;#123A&amp;#125&amp;#125$ 的每一行相加，无须在加法操作前定义一个将向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 复制到每一行而生成的矩阵。<strong>这种隐式的复制向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 到很多位置的方式，就是广播。</strong></li>
+<li><strong>广播（broadcasting）</strong>: 存在如下公式：${ {C}_{ij} }={ {A}_{i,j} }+{ {b}_{j} }$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩阵和向量相加，产生另外一个矩阵。向量 ${ {b} }$ 和矩阵 ${ {A} }$ 的每一行相加，无须在加法操作前定义一个将向量 ${ {b} }$ 复制到每一行而生成的矩阵。<strong>这种隐式的复制向量 ${ {b} }$ 到很多位置的方式，就是广播。</strong></li>
 <li><p><strong>生成子空间</strong>：原始向量线性组合后所能抵达的点的集合（确定$Ax=b$ 是否有解，相当于确定向量 $b$ 是否在$A$列向量的生成子空间中。这个特殊的生成子空间被称为$A$的 <strong>列空间(column space)</strong> 或者 $A$ 的<strong>值域(range)</strong>）。</p>
 </li>
 <li><p><strong>线性相关</strong>与<strong>线性无关</strong>：如果一组向量中的任意一个向量都不能表示成其他向量的线性组合，那么这组向量称为<strong>线性无关(linearly independent)</strong> ，反之则是<strong>线性相关(linear dependent)</strong>。</p>
 </li>
 <li>一个列向量线性相关的方阵（$m=n$）被称为<strong>奇异的(singular)</strong>。</li>
-<li>两个向量的<strong>点积</strong>用$L^2$范数表示：$&amp;#123&amp;#123x&amp;#125^&amp;#123T&amp;#125&amp;#125y=&amp;#123&amp;#123\left| x \right|&amp;#125_&amp;#1232&amp;#125&amp;#125&amp;#123&amp;#123\left| y \right|&amp;#125_&amp;#1232&amp;#125&amp;#125\cos \theta$</li>
-<li><strong>迹运算</strong>：返回的是矩阵对角元素的和。$Tr(A)=\sum\limits_&amp;#123i&amp;#125&amp;#123&amp;#123&amp;#123A&amp;#125_&amp;#123i,i&amp;#125&amp;#125&amp;#125$</li>
+<li>两个向量的<strong>点积</strong>用$L^2$范数表示：${ {x}^{T} }y={ {\left| x \right|}_{2} }{ {\left| y \right|}_{2} }\cos \theta$</li>
+<li><strong>迹运算</strong>：返回的是矩阵对角元素的和。$Tr(A)=\sum\limits_{i}{ { {A}_{i,i} } }$</li>
 </ul>
 <hr>
 <blockquote>
@@ -404,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/18/tornado-静态文件路径绑定细节/" rel="next" title="tornado 静态文件路径绑定细节">
-                <i class="fa fa-chevron-left"></i> tornado 静态文件路径绑定细节
+              <a href="/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论/" rel="next" title="《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论">
+                <i class="fa fa-chevron-left"></i> 《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论
               </a>
             
           </div>
@@ -413,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论/" rel="prev" title="《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论">
-                《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -771,6 +766,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

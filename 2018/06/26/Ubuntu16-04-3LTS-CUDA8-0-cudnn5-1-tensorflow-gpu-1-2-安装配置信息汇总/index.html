@@ -19,7 +19,6 @@
 
 
 
-
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -392,7 +391,7 @@
 <p>然后输入ifconfig，查看主机的ip地址，就可以利用secureCRT远程连接安装了（好处就是…可以复制代码，时间太长的安装，再回主机进行）下图是我的ifconfig之后查看到的ip<br><img src="http://img.blog.csdn.net/20171025140759696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这是我的ifconfig之后查看到的ip"></p>
 <h2 id="升级和配置基本环境"><a href="#升级和配置基本环境" class="headerlink" title="升级和配置基本环境"></a>升级和配置基本环境</h2><p>执行如下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt install -y python-dev python-pip python-nose gcc g++ git gfortran vim</span><br><span class="line">sudo apt install -y libopenblas-dev liblapack-dev libatlas-base-dev</span><br></pre></td></tr></table></figure>
-<p>#Nvidia-driver安装<br>之前一周本来装好了一个，结果由于显卡没有供电，还特意去买了一个电源，结果还是不行，主板不合适，后来不得不换一个机箱。<br>新机箱新主板，空间也大了，插显卡轻松许多…主要是能正常工作！！！<br>安装驱动很简单，建议在NVIDIA官网<a href="http://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">（显卡型号查询链接）</a>查询自己的机子对应的版本号：注意产品类型和产品家族，因为产品系列在服务器中是查不到的。下图是我查的对应的驱动型号（即使安错了也无所谓，可以无痛卸载的嘛）<br><img src="http://img.blog.csdn.net/20171115100856111?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="Nvidia-driver安装"><a href="#Nvidia-driver安装" class="headerlink" title="Nvidia-driver安装"></a>Nvidia-driver安装</h1><p>之前一周本来装好了一个，结果由于显卡没有供电，还特意去买了一个电源，结果还是不行，主板不合适，后来不得不换一个机箱。<br>新机箱新主板，空间也大了，插显卡轻松许多…主要是能正常工作！！！<br>安装驱动很简单，建议在NVIDIA官网<a href="http://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">（显卡型号查询链接）</a>查询自己的机子对应的版本号：注意产品类型和产品家族，因为产品系列在服务器中是查不到的。下图是我查的对应的驱动型号（即使安错了也无所谓，可以无痛卸载的嘛）<br><img src="http://img.blog.csdn.net/20171115100856111?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>然后就有三种方式安装驱动：</p>
 <ul>
 <li>方法1：<code>apt-get</code>方式<br>执行如下代码：</li>
@@ -640,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu-16-04-3-LTS"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 16.04.3 LTS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本安装"><span class="nav-number">1.1.</span> <span class="nav-text">基本安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户，为ssh远程操作铺路"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户，为ssh远程操作铺路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级和配置基本环境"><span class="nav-number">1.3.</span> <span class="nav-text">升级和配置基本环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装CUDA"><span class="nav-number">2.</span> <span class="nav-text">安装CUDA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cuDNN安装"><span class="nav-number">3.</span> <span class="nav-text">cuDNN安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tensorflow-gpu（1-2）版本安装"><span class="nav-number">4.</span> <span class="nav-text">Tensorflow-gpu（1.2）版本安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu-16-04-3-LTS"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 16.04.3 LTS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本安装"><span class="nav-number">1.1.</span> <span class="nav-text">基本安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户，为ssh远程操作铺路"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户，为ssh远程操作铺路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级和配置基本环境"><span class="nav-number">1.3.</span> <span class="nav-text">升级和配置基本环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nvidia-driver安装"><span class="nav-number">2.</span> <span class="nav-text">Nvidia-driver安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装CUDA"><span class="nav-number">3.</span> <span class="nav-text">安装CUDA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cuDNN安装"><span class="nav-number">4.</span> <span class="nav-text">cuDNN安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tensorflow-gpu（1-2）版本安装"><span class="nav-number">5.</span> <span class="nav-text">Tensorflow-gpu（1.2）版本安装</span></a></li></ol></div>
             
 
           </div>
@@ -847,6 +846,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

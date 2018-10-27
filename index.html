@@ -19,7 +19,6 @@
 
 
 
-
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -289,6 +288,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lau James">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AgentJames">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/" itemprop="url">《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T14:55:56+08:00">
+                2018-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概念区分"><a href="#概念区分" class="headerlink" title="概念区分"></a>概念区分</h1><ul>
+<li><strong>标量（scalar）</strong>: 一个单独的数</li>
+<li><strong>向量（vector）</strong>: 一个向量是一列数</li>
+<li><strong>矩阵（matrix）</strong>: 矩阵是一个二维数组</li>
+<li><strong>张量（tensor）</strong>: 若干维（一般超过两维）的数组</li>
+</ul>
+<hr>
+<h1 id="常用基础概念"><a href="#常用基础概念" class="headerlink" title="常用基础概念"></a>常用基础概念</h1><ul>
+<li><strong>广播（broadcasting）</strong>: 存在如下公式：${ {C}_{ij} }={ {A}_{i,j} }+{ {b}_{j} }$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩阵和向量相加，产生另外一个矩阵。向量 ${ {b} }$ 和矩阵 ${ {A} }$ 的每一行相加，无须在加法操作前定义一个将向量 ${ {b} }$ 复制到每一行而生成的矩阵。<strong>这种隐式的复制向量 ${ {b} }$ 到很多位置的方式，就是广播。</strong></li>
+<li><p><strong>生成子空间</strong>：原始向量线性组合后所能抵达的点的集合（确定$Ax=b$ 是否有解，相当于确定向量 $b$ 是否在$A$列向量的生成子空间中。这个特殊的生成子空间被称为$A$的 <strong>列空间(column space)</strong> 或者 $A$ 的<strong>值域(range)</strong>）。</p>
+</li>
+<li><p><strong>线性相关</strong>与<strong>线性无关</strong>：如果一组向量中的任意一个向量都不能表示成其他向量的线性组合，那么这组向量称为<strong>线性无关(linearly independent)</strong> ，反之则是<strong>线性相关(linear dependent)</strong>。</p>
+</li>
+<li>一个列向量线性相关的方阵（$m=n$）被称为<strong>奇异的(singular)</strong>。</li>
+<li>两个向量的<strong>点积</strong>用$L^2$范数表示：${ {x}^{T} }y={ {\left| x \right|}_{2} }{ {\left| y \right|}_{2} }\cos \theta$</li>
+<li><strong>迹运算</strong>：返回的是矩阵对角元素的和。$Tr(A)=\sum\limits_{i}{ { {A}_{i,i} } }$</li>
+</ul>
+<hr>
+<blockquote>
+<p>后面需要什么再补充吧~暂时这一块儿就这么多</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第三章：概率与信息论/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -373,34 +512,34 @@
 <li><strong>伯努利分布（Bernoulli distribution)</strong><br> 单个二值随机变量的分布。由单个参数 $\phi \in [0,1]$ 控制，$\phi$ 给出了随机变量等于1的概率，基本性质：</li>
 </ol>
 <ul>
-<li>$$P(\text&amp;#123x&amp;#125=1)=\phi$$</li>
-<li>$$P(\text&amp;#123x&amp;#125=0)=1-\phi$$ </li>
-<li>$$P(\text&amp;#123x=&amp;#125x)=&amp;#123&amp;#123\phi &amp;#125^&amp;#123x&amp;#125&amp;#125&amp;#123&amp;#123(1-\phi )&amp;#125^&amp;#1231-x&amp;#125&amp;#125$$</li>
-<li>$$&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125&amp;#125&amp;#125[\text&amp;#123x&amp;#125]\text&amp;#123=&amp;#125\phi$$</li>
-<li>$$Va&amp;#123&amp;#123r&amp;#125_&amp;#123\text&amp;#123x&amp;#125&amp;#125&amp;#125(\text&amp;#123x&amp;#125)=\phi (1-\phi )$$</li>
+<li><script type="math/tex; mode=display">P(\text{x}=1)=\phi</script></li>
+<li><script type="math/tex; mode=display">P(\text{x}=0)=1-\phi</script></li>
+<li><script type="math/tex; mode=display">P(\text{x=}x)={ {\phi }^{x} }{ {(1-\phi )}^{1-x} }</script></li>
+<li><script type="math/tex; mode=display">{ {\Epsilon }_{\text{x} } }[\text{x}]\text{=}\phi</script></li>
+<li><script type="math/tex; mode=display">Va{ {r}_{\text{x} } }(\text{x})=\phi (1-\phi )</script></li>
 </ul>
-<ol start="2">
-<li><strong>高斯分布（Gaussian distribution）</strong> 或  <strong>正态分布（normal distribution）</strong><br>$$\Nu (x;u,&amp;#123&amp;#123\sigma &amp;#125^&amp;#1232&amp;#125&amp;#125)=\sqrt&amp;#123\frac&amp;#1231&amp;#125&amp;#1232\pi &amp;#123&amp;#123\sigma &amp;#125^&amp;#1232&amp;#125&amp;#125&amp;#125&amp;#125\exp (-\frac&amp;#1231&amp;#125&amp;#1232&amp;#123&amp;#123\sigma &amp;#125^&amp;#1232&amp;#125&amp;#125&amp;#125&amp;#123&amp;#123(x-\mu )&amp;#125^&amp;#1232&amp;#125&amp;#125)$$</li>
+<ol>
+<li><strong>高斯分布（Gaussian distribution）</strong> 或  <strong>正态分布（normal distribution）</strong><script type="math/tex; mode=display">\Nu (x;u,{ {\sigma }^{2} })=\sqrt{\frac{1}{2\pi { {\sigma }^{2} } } }\exp (-\frac{1}{2{ {\sigma }^{2} } }{ {(x-\mu )}^{2} })</script></li>
 </ol>
 <ul>
 <li>均值为$\mu$；标准差为$\sigma$；方差为$\sigma ^2$；</li>
 <li>当我们需要对概率密度函数求值时，需要对$\sigma$平方并且取倒数。</li>
-<li>当需要经常对不同参数下的概率密度函数求值时，一种更高效的参数化分布的方式时使用参数$\beta \in (0, \infin)$来控制分布的<strong>精度(precision)</strong>（或方差的倒数）：<br>$$\Nu (x;u,&amp;#123&amp;#123\beta &amp;#125^&amp;#123-1&amp;#125&amp;#125)=\sqrt&amp;#123\frac&amp;#123\beta &amp;#125&amp;#1232\pi &amp;#125&amp;#125\exp \left( -\frac&amp;#1231&amp;#125&amp;#1232&amp;#125\beta &amp;#123&amp;#123(x-\mu )&amp;#125^&amp;#1232&amp;#125&amp;#125 \right)$$</li>
+<li>当需要经常对不同参数下的概率密度函数求值时，一种更高效的参数化分布的方式时使用参数$\beta \in (0, \infin)$来控制分布的<strong>精度(precision)</strong>（或方差的倒数）：<script type="math/tex; mode=display">\Nu (x;u,{ {\beta }^{-1} })=\sqrt{\frac{\beta }{2\pi } }\exp \left( -\frac{1}{2}\beta { {(x-\mu )}^{2} } \right)</script></li>
 <li>采用正态分布在很多应用中都是一个明智的选择。当我们由于缺乏关于某个实数上分布的先验知识而不知道该选择怎样的形式时，正态分布是默认的比较好的选择，主要两个原因：<br>（1）我们想要建模的很多分布的真实情况是比较接近正态分布的。<strong>中心极限定理（central limit theorem）</strong>说明很多独立随机变量的和近似服从正态分布。<br>（2）在具有相同方差的所有可能的概率分布中，正态分布在实数上具有最大的不确定性。因此，可以认为正态分布是对模型 <em>加入的先验知识量最少</em> 的分布。</li>
-<li>正态分布可以推广到$&amp;#123&amp;#123\mathbb&amp;#123R&amp;#125&amp;#125^&amp;#123n&amp;#125&amp;#125$ ，被称为<strong>多维正态分布（multivariate normal distribution）</strong>。他的参数是一个正定对称矩阵$\Sigma$:<br>$$\Nu (\mathbf&amp;#123x&#125;\mathbf&amp;#123\mu &amp;#125,\mathbf&amp;#123\Sigma &amp;#125)=\sqrt&amp;#123\frac&amp;#1231&amp;#125&amp;#123&amp;#123&amp;#123(2\pi )&amp;#125^&amp;#123n&amp;#125&amp;#125\det (\mathbf&amp;#123\Sigma &amp;#125)&amp;#125&amp;#125\exp \left( -\frac&amp;#1231&amp;#125&amp;#1232&amp;#125&amp;#123&amp;#123(\mathbf&amp;#123x&amp;#125-\mathbf&amp;#123\mu &amp;#125)&amp;#125^&amp;#123T&amp;#125&amp;#125&amp;#123&amp;#123\mathbf&amp;#123\Sigma &amp;#125&amp;#125^&amp;#123-1&amp;#125&amp;#125(\mathbf&amp;#123x&amp;#125-\mathbf&amp;#123\mu &amp;#125) \right)$$</li>
-<li>参数$\mathbf&amp;#123\mu &amp;#125$ 仍然表示分布的均值，只不过现在是向量值。参数$\mathbf&amp;#123\Sigma &amp;#125$ 给出了分布的协方差矩阵。同样的，和单变量的情况类似，我们希望对很多不同参数下的概率密度函数多次求值时，协方差矩阵并不是一个很高效的参数化分布的方式，因为对概率密度函数求值时需要对$\mathbf&amp;#123\Sigma &amp;#125$ 求逆，这时可以用<strong>精度矩阵（precision matrix）</strong>$\mathbf&amp;#123\beta&amp;#125$ 进行替代：<br>$$\Nu (\mathbf&amp;#123x&#125;\mathbf&amp;#123\mu &amp;#125,&amp;#123&amp;#123\mathbf&amp;#123\beta &amp;#125&amp;#125^&amp;#123-1&amp;#125&amp;#125)=\sqrt&amp;#123\frac&amp;#123\det (\mathbf&amp;#123\beta &amp;#125)&amp;#125&amp;#123&amp;#123&amp;#123(2\pi )&amp;#125^&amp;#123n&amp;#125&amp;#125&amp;#125&amp;#125\exp \left( -\frac&amp;#1231&amp;#125&amp;#1232&amp;#125&amp;#123&amp;#123(\mathbf&amp;#123x&amp;#125-\mathbf&amp;#123\mu &amp;#125)&amp;#125^&amp;#123T&amp;#125&amp;#125\mathbf&amp;#123\beta &amp;#125(\mathbf&amp;#123x&amp;#125-\mathbf&amp;#123\mu &amp;#125) \right)$$</li>
+<li>正态分布可以推广到${ {\mathbb{R} }^{n} }$ ，被称为<strong>多维正态分布（multivariate normal distribution）</strong>。他的参数是一个正定对称矩阵$\Sigma$:<script type="math/tex; mode=display">\Nu (\mathbf{x};\mathbf{\mu },\mathbf{\Sigma })=\sqrt{\frac{1}{ { {(2\pi )}^{n} }\det (\mathbf{\Sigma })} }\exp \left( -\frac{1}{2}{ {(\mathbf{x}-\mathbf{\mu })}^{T} }{ {\mathbf{\Sigma } }^{-1} }(\mathbf{x}-\mathbf{\mu }) \right)</script></li>
+<li>参数$\mathbf{\mu }$ 仍然表示分布的均值，只不过现在是向量值。参数$\mathbf{\Sigma }$ 给出了分布的协方差矩阵。同样的，和单变量的情况类似，我们希望对很多不同参数下的概率密度函数多次求值时，协方差矩阵并不是一个很高效的参数化分布的方式，因为对概率密度函数求值时需要对$\mathbf{\Sigma }$ 求逆，这时可以用<strong>精度矩阵（precision matrix）</strong>$\mathbf{\beta}$ 进行替代：<script type="math/tex; mode=display">\Nu (\mathbf{x};\mathbf{\mu },{ {\mathbf{\beta } }^{-1} })=\sqrt{\frac{\det (\mathbf{\beta })}{ { {(2\pi )}^{n} } } }\exp \left( -\frac{1}{2}{ {(\mathbf{x}-\mathbf{\mu })}^{T} }\mathbf{\beta }(\mathbf{x}-\mathbf{\mu }) \right)</script></li>
 </ul>
-<ol start="3">
-<li><strong>指数分布（exponential distribution）</strong><br>在深度学习中，我们经常需要一个在$x=0$点取得边界点（sharp point）的分布，这时可以使用指数分布：<br>$$p(x;\lambda )=\lambda &amp;#123&amp;#1231&amp;#125_&amp;#123x\ge 0&amp;#125&amp;#125\exp (-\lambda x)$$<br>指数分布用指示函数（indicator function）$&amp;#123&amp;#1231&amp;#125_&amp;#123x\ge 0&amp;#125&amp;#125$来使得当$x$取负值时的概率为零。</li>
-<li><strong>拉普拉斯分布（Laplace distribution)</strong><br>和指数函数联系紧密，允许在任意一点$\mu$ 处设置概率质量的峰值：<br>$$Laplace(x;\mu ,\gamma )=\frac&amp;#1231&amp;#125&amp;#1232\gamma &amp;#125\exp \left( -\frac&amp;#123\left| x-\mu  \right|&amp;#125&amp;#123\gamma &amp;#125 \right)$$</li>
-<li><strong>Dirac分布和经验分布</strong><br>在某些情况下，我们希望概率分布中的所有质量都集中在一个点上。可以通过<strong>Dirac delta函数（Dirac delta function）</strong> $\delta (x)$ 定义概率密度函数来实现：<br>$$p(x)=\delta (x-\mu )$$</li>
+<ol>
+<li><strong>指数分布（exponential distribution）</strong><br>在深度学习中，我们经常需要一个在$x=0$点取得边界点（sharp point）的分布，这时可以使用指数分布：<script type="math/tex; mode=display">p(x;\lambda )=\lambda { {1}_{x\ge 0} }\exp (-\lambda x)</script>指数分布用指示函数（indicator function）${ {1}_{x\ge 0} }$来使得当$x$取负值时的概率为零。</li>
+<li><strong>拉普拉斯分布（Laplace distribution)</strong><br>和指数函数联系紧密，允许在任意一点$\mu$ 处设置概率质量的峰值：<script type="math/tex; mode=display">Laplace(x;\mu ,\gamma )=\frac{1}{2\gamma }\exp \left( -\frac{\left| x-\mu  \right|}{\gamma } \right)</script></li>
+<li><strong>Dirac分布和经验分布</strong><br>在某些情况下，我们希望概率分布中的所有质量都集中在一个点上。可以通过<strong>Dirac delta函数（Dirac delta function）</strong> $\delta (x)$ 定义概率密度函数来实现：<script type="math/tex; mode=display">p(x)=\delta (x-\mu )</script></li>
 </ol>
 <ul>
 <li>Dirac delta函数被定义成在除了0（$\mu$ 为0）以外的所有点的值都为0，但是积分为1。它不像普通函数一样对$x$ 的每一个值都有一个实数值的输出，它是一种不同类型的数学对象，被称为<strong>广义函数（generalized function）</strong></li>
-<li>Dirac 分布经常作为<strong>经验分布（empirical distribution</strong>的一个组成部分出现：<br>$$\overset&amp;#123\hat&amp;#123\ &amp;#125&amp;#125&amp;#123\mathop&amp;#123p&amp;#125&amp;#125\,(x)=\frac&amp;#1231&amp;#125&amp;#123m&amp;#125\sum\limits_&amp;#123i=1&amp;#125^&amp;#123m&amp;#125&amp;#123\delta \left( x-&amp;#123&amp;#123x&amp;#125^&amp;#123(i)&amp;#125&amp;#125 \right)&amp;#125$$<br>经验分布将概率密度$\frac&amp;#1231&amp;#125&amp;#123m&amp;#125$ 赋给$m$ 个点$&amp;#123&amp;#123x&amp;#125^&amp;#123(1)&amp;#125&amp;#125,\ldots ,&amp;#123&amp;#123x&amp;#125^&amp;#123(m)&amp;#125&amp;#125$ 中的每一个，这些点是给定的数据集或者采样的集合。连续型随机变量的经验分布才有应用Dirac delta函数的必要，离散型随机变量的经验分布可以定义成Multinoulli分布（对于每一个可能的输入，其概率可以简单的设为在训练集上那个输入值的<strong>经验频率（empirical frequency）</strong>）</li>
+<li>Dirac 分布经常作为<strong>经验分布（empirical distribution</strong>的一个组成部分出现：<script type="math/tex; mode=display">\overset{\hat{\ } }{\mathop{p} }\,(x)=\frac{1}{m}\sum\limits_{i=1}^{m}{\delta \left( x-{ {x}^{(i)} } \right)}</script>经验分布将概率密度$\frac{1}{m}$ 赋给$m$ 个点${ {x}^{(1)} },\ldots ,{ {x}^{(m)} }$ 中的每一个，这些点是给定的数据集或者采样的集合。连续型随机变量的经验分布才有应用Dirac delta函数的必要，离散型随机变量的经验分布可以定义成Multinoulli分布（对于每一个可能的输入，其概率可以简单的设为在训练集上那个输入值的<strong>经验频率（empirical frequency）</strong>）</li>
 </ul>
-<ol start="6">
-<li><strong>混合分布（mixture distribution）</strong><br>混合分布由一些组件分布构成。每次实验，样本是由哪个组件分布产生的取决于从一个Multinoulli分布中采样的结果：<br>$$P(x)=\sum\limits_&amp;#123i&amp;#125&amp;#123P(c=i)P(x|c=i)&amp;#125$$<br>这里$P(c)$ 是对各组件的一个Multinoulli分布。</li>
+<ol>
+<li><strong>混合分布（mixture distribution）</strong><br>混合分布由一些组件分布构成。每次实验，样本是由哪个组件分布产生的取决于从一个Multinoulli分布中采样的结果：<script type="math/tex; mode=display">P(x)=\sum\limits_{i}{P(c=i)P(x|c=i)}</script>这里$P(c)$ 是对各组件的一个Multinoulli分布。</li>
 </ol>
 <ul>
 <li>混合分布以后会经常用到，非常重要。包括<strong>潜变量（latent variable）</strong>等概念</li>
@@ -409,24 +548,23 @@
 </ul>
 <hr>
 <h2 id="3-10-常用函数的有用性质"><a href="#3-10-常用函数的有用性质" class="headerlink" title="3.10 常用函数的有用性质"></a>3.10 常用函数的有用性质</h2><ol>
-<li><strong>logistic sigmoid</strong>函数<br>$$\sigma (x)=\frac&amp;#1231&amp;#125&amp;#1231+\exp (-x)&amp;#125$$<br>logistic sigmoid函数常用来产生Bernoulli分布中的参数$\phi$，因为它的范围是$（0, 1）$，处在$\phi$的有效取值范围内。sigmoid函数在变量取绝对值非常大的正值或者负值时会出现<strong>饱和(saturate)</strong>现象，意味着函数会变得很平，并且对输入的微小改变会变得不敏感。</li>
-<li><strong> softplus 函数</strong><br>$$\zeta (x)=\log \left( 1+\exp (x) \right)$$<br>softplus函数可以用来产生正态分布的$\beta$和$\sigma$参数，因为它的范围是$（0, \infin）$，当处理包含sigmoid函数的表达式时，经常出现。函数名来源于它是另外一个函数的平滑（或“软化”）形式：<br>$$&amp;#123&amp;#123x&amp;#125^&amp;#123+&amp;#125&amp;#125=\max (0,x)$$<br>有用的一些性质：</li>
+<li><strong>logistic sigmoid</strong>函数<script type="math/tex; mode=display">\sigma (x)=\frac{1}{1+\exp (-x)}</script>logistic sigmoid函数常用来产生Bernoulli分布中的参数$\phi$，因为它的范围是$（0, 1）$，处在$\phi$的有效取值范围内。sigmoid函数在变量取绝对值非常大的正值或者负值时会出现<strong>饱和(saturate)</strong>现象，意味着函数会变得很平，并且对输入的微小改变会变得不敏感。</li>
+<li><strong> softplus 函数</strong><script type="math/tex; mode=display">\zeta (x)=\log \left( 1+\exp (x) \right)</script>softplus函数可以用来产生正态分布的$\beta$和$\sigma$参数，因为它的范围是$（0, \infin）$，当处理包含sigmoid函数的表达式时，经常出现。函数名来源于它是另外一个函数的平滑（或“软化”）形式：<script type="math/tex; mode=display">{ {x}^{+} }=\max (0,x)</script>有用的一些性质：</li>
 </ol>
 <ul>
-<li>$\sigma (x)=\frac&amp;#123\exp (x)&amp;#125&amp;#123\exp (x)+\exp (0)&amp;#125$</li>
-<li>$\frac&amp;#123d&amp;#125&amp;#123dx&amp;#125\sigma (x)=\sigma (x)\sigma \left( 1-\sigma (x) \right)$  logistics函数的导数可以用自身表示，这个很有利</li>
+<li>$\sigma (x)=\frac{\exp (x)}{\exp (x)+\exp (0)}$</li>
+<li>$\frac{d}{dx}\sigma (x)=\sigma (x)\sigma \left( 1-\sigma (x) \right)$  logistics函数的导数可以用自身表示，这个很有利</li>
 <li>$1-\sigma (x)=\sigma (-x)$</li>
 <li>$\log \sigma (x)=-\zeta (-x)$</li>
-<li>$\frac&amp;#123d&amp;#125&amp;#123dx&amp;#125\zeta (x)=\sigma (x)$</li>
-<li>$\forall x\in (0,1),&amp;#123&amp;#123\sigma &amp;#125^&amp;#123-1&amp;#125&amp;#125(x)=\log \left( \frac&amp;#123x&amp;#125&amp;#1231-x&amp;#125 \right)$</li>
-<li>$\forall x&gt;0,&amp;#123&amp;#123\zeta &amp;#125^&amp;#123-1&amp;#125&amp;#125(x)=\log \left( \exp (x)-1 \right)$</li>
-<li>$\zeta (x)=\int_&amp;#123-\infty &amp;#125^&amp;#123x&amp;#125&amp;#123\sigma (y)dy&amp;#125$</li>
-<li>$\zeta (x)-\zeta (-x)=x$<br>函数$&amp;#123&amp;#123\sigma &amp;#125^&amp;#123-1&amp;#125&amp;#125(x)$在统计学中被称为<strong>分对数（logit）</strong>，机器学习中很少用到。</li>
+<li>$\frac{d}{dx}\zeta (x)=\sigma (x)$</li>
+<li>$\forall x\in (0,1),{ {\sigma }^{-1} }(x)=\log \left( \frac{x}{1-x} \right)$</li>
+<li>$\forall x&gt;0,{ {\zeta }^{-1} }(x)=\log \left( \exp (x)-1 \right)$</li>
+<li>$\zeta (x)=\int_{-\infty }^{x}{\sigma (y)dy}$</li>
+<li>$\zeta (x)-\zeta (-x)=x$<br>函数${ {\sigma }^{-1} }(x)$在统计学中被称为<strong>分对数（logit）</strong>，机器学习中很少用到。</li>
 </ul>
 <hr>
 <h2 id="3-11-贝叶斯规则"><a href="#3-11-贝叶斯规则" class="headerlink" title="3.11 贝叶斯规则"></a>3.11 贝叶斯规则</h2><p>经典公式：</p>
-<p>$$P(x|y)=\frac&amp;#123P(x)P(y|x)&amp;#125&amp;#123P(y)&amp;#125$$</p>
-<p>其中$P(y)$可以使用$P(y)=\sum\nolimits_&amp;#123x&amp;#125&amp;#123P(y|x)P(x)&amp;#125$来计算。</p>
+<script type="math/tex; mode=display">P(x|y)=\frac{P(x)P(y|x)}{P(y)}</script><p>其中$P(y)$可以使用$P(y)=\sum\nolimits_{x}{P(y|x)P(x)}$来计算。</p>
 <h2 id="3-13-信息论"><a href="#3-13-信息论" class="headerlink" title="3.13 信息论"></a>3.13 信息论</h2><p>3个重要性质：</p>
 <ul>
 <li>非常可能发生的事情信息量要比较少，并且极端情况下，确保能够发生的事件应该没有信息量。</li>
@@ -434,168 +572,31 @@
 <li>独立事件应具有增量的信息。例如，投掷的硬币两次正面朝上传递的信息量，应该时投掷一次硬币正面朝上的信息量的两倍。</li>
 </ul>
 <ol>
-<li><p><strong>自信息（self-information)</strong><br>为满足3个性质，定义事件$\text&amp;#123x&amp;#125=x$的<strong>自信息（self-information）为</strong>：<br>$$I(x)=-\log P(x)$$<br>《Deep Learning》使用log来表示自然对数，底数为$e$，$I(x)$单位是<strong>奈特（nats）</strong>。一奈特是以$\frac&amp;#1231&amp;#125&amp;#123e&amp;#125$的概率观测到一个事件时获得的信息量。（其他材料中使用底数为2的对数，单位是<strong>比特（bit）</strong> 或者<strong>香农（shannons）</strong>）</p>
+<li><p><strong>自信息（self-information)</strong><br>为满足3个性质，定义事件$\text{x}=x$的<strong>自信息（self-information）为</strong>：</p>
+<script type="math/tex; mode=display">I(x)=-\log P(x)</script><p>《Deep Learning》使用log来表示自然对数，底数为$e$，$I(x)$单位是<strong>奈特（nats）</strong>。一奈特是以$\frac{1}{e}$的概率观测到一个事件时获得的信息量。（其他材料中使用底数为2的对数，单位是<strong>比特（bit）</strong> 或者<strong>香农（shannons）</strong>）</p>
 </li>
-<li><p><strong>香农熵（Shannon entropy）</strong><br>自信息只处理单个的输出。利用 <strong>香农熵（Shannon entropy）</strong> 来对整个概率分布中的不确定性总量进行量化：<br>$$H(x)=&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125\sim P&amp;#125&amp;#125\left[ I(x) \right]=-&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125\tilde&amp;#123\ &amp;#125P&amp;#125&amp;#125\left[ \log P(x) \right]$$<br>也记作$H(P)$</p>
+<li><p><strong>香农熵（Shannon entropy）</strong><br>自信息只处理单个的输出。利用 <strong>香农熵（Shannon entropy）</strong> 来对整个概率分布中的不确定性总量进行量化：</p>
+<script type="math/tex; mode=display">H(x)={ {\Epsilon }_{\text{x}\sim P} }\left[ I(x) \right]=-{ {\Epsilon }_{\text{x}\tilde{\ }P} }\left[ \log P(x) \right]</script><p>也记作$H(P)$</p>
 </li>
-<li><p><strong>KL散度（Kullback-Leibler（KL）divergence）</strong><br>如果对于一个随机变量$x$有两个单独的概率分布$P(x)$和$Q(x)$，可以使用KL散度来衡量这两个分布的差异：<br>$$&amp;#123&amp;#123D&amp;#125_&amp;#123KL&amp;#125&amp;#125(P||Q)=&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125\tilde&amp;#123\ &amp;#125P&amp;#125&amp;#125\left[ \log \frac&amp;#123P(x)&amp;#125&amp;#123Q(x)&amp;#125 \right]=&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125\tilde&amp;#123\ &amp;#125P&amp;#125&amp;#125\left[ \log P(x)-\log Q(x) \right]$$</p>
-</li>
+<li><p><strong>KL散度（Kullback-Leibler（KL）divergence）</strong><br>如果对于一个随机变量$x$有两个单独的概率分布$P(x)$和$Q(x)$，可以使用KL散度来衡量这两个分布的差异：</p>
+<script type="math/tex; mode=display">{ {D}_{KL} }(P||Q)={ {\Epsilon }_{\text{x}\tilde{\ }P} }\left[ \log \frac{P(x)}{Q(x)} \right]={ {\Epsilon }_{\text{x}\tilde{\ }P} }\left[ \log P(x)-\log Q(x) \right]</script></li>
 </ol>
 <ul>
 <li>意义：在离散型变量的情况下，KL散度衡量的是，当我们使用一种被设计成能够是的概率分布Q产生的消息的长度最小的编码，发送包含由概率分布$P$产生的符号的消息时，所需要的额外信息量（比特或奈特）</li>
 <li>用作分布之间的距离</li>
-<li>KL散度和<strong>交叉熵（cross-entropy）</strong> 联系密切：<br>交叉熵：<br>$$H(P,Q)=H(P)+&amp;#123&amp;#123D&amp;#125_&amp;#123KL&amp;#125&amp;#125(P||Q)=-&amp;#123&amp;#123\Epsilon &amp;#125_&amp;#123\text&amp;#123x&amp;#125\tilde&amp;#123\ &amp;#125P&amp;#125&amp;#125\log Q(x)$$<br>和KL散度很像，缺少KL散度左边$\text&amp;#123E&amp;#125_&amp;#123\text&amp;#123x&amp;#125\tilde&amp;#123&amp;#125P&amp;#125logP(x)$<br>-计算这些量时，经常遇到$0log0$这个表达式，信息论中，这个表达式处理为：$\underset&amp;#123x\to 0&amp;#125&amp;#123\mathop&amp;#123\lim &amp;#125&amp;#125\,x\log x=0$</li>
-<li>离散型变量交叉熵的计算：$H(p,q)=\sum\limits_&amp;#123x&amp;#125&amp;#123p(x)\log \left( \frac&amp;#1231&amp;#125&amp;#123q(x)&amp;#125 \right)&amp;#125$</li>
-<li>连续型变量交叉熵的计算：$-\int_&amp;#123X&amp;#125&amp;#123P(x)\log Q(x)dr(x)=&amp;#123&amp;#123E&amp;#125_&amp;#123p&amp;#125&amp;#125\left[ -\log Q \right]&amp;#125$</li>
+<li>KL散度和<strong>交叉熵（cross-entropy）</strong> 联系密切：<br>交叉熵：<script type="math/tex; mode=display">H(P,Q)=H(P)+{ {D}_{KL} }(P||Q)=-{ {\Epsilon }_{\text{x}\tilde{\ }P} }\log Q(x)</script>和KL散度很像，缺少KL散度左边$\text{E}_{\text{x}\tilde{}P}logP(x)$<br>-计算这些量时，经常遇到$0log0$这个表达式，信息论中，这个表达式处理为：$\underset{x\to 0}{\mathop{\lim } }\,x\log x=0$</li>
+<li>离散型变量交叉熵的计算：$H(p,q)=\sum\limits_{x}{p(x)\log \left( \frac{1}{q(x)} \right)}$</li>
+<li>连续型变量交叉熵的计算：$-\int_{X}{P(x)\log Q(x)dr(x)={ {E}_{p} }\left[ -\log Q \right]}$</li>
 </ul>
-<h2 id="结构化概率模型"><a href="#结构化概率模型" class="headerlink" title="结构化概率模型"></a>结构化概率模型</h2><p>我们可以把概率分布分解成许多因子的乘积形式。比如：<br>$$p(a,b,c)=p(a)p(b|a)p(c|b)$$<br>（变量之间关系…右边很明了，不再赘述）<br>这种形式能极大的降低表示联合概率分布的成本，当用图来表示这种概率分布的分解时，我们把它称为<strong>结构化概率分布（Structured probabilistic model）</strong> 或者 <strong>图模型（graphical model）</strong></p>
+<h2 id="结构化概率模型"><a href="#结构化概率模型" class="headerlink" title="结构化概率模型"></a>结构化概率模型</h2><p>我们可以把概率分布分解成许多因子的乘积形式。比如：</p>
+<script type="math/tex; mode=display">p(a,b,c)=p(a)p(b|a)p(c|b)</script><p>（变量之间关系…右边很明了，不再赘述）<br>这种形式能极大的降低表示联合概率分布的成本，当用图来表示这种概率分布的分解时，我们把它称为<strong>结构化概率分布（Structured probabilistic model）</strong> 或者 <strong>图模型（graphical model）</strong></p>
 <ul>
-<li><strong>有向（directed）</strong> 模型 使用带有有向边的图，他们用条件分布来表示分解。有向模型对于分布中的每一个随机变量$x_i$都包含着一个影响因子，这个组成$x_i$条件概率的影响因子被称为$x_i$的父节点，记为$&amp;#123&amp;#123P&amp;#125_&amp;#123a\varsigma &amp;#125&amp;#125(&amp;#123&amp;#123x&amp;#125_&amp;#123i&amp;#125&amp;#125)$。<br>$$p(x)=\prod\limits_&amp;#123i&amp;#125&amp;#123p\left( &amp;#123&amp;#123x&amp;#125_&amp;#123i&amp;#125&amp;#125|&amp;#123&amp;#123P&amp;#125_&amp;#123a\varsigma &amp;#125&amp;#125(&amp;#123&amp;#123x&amp;#125_&amp;#123i&amp;#125&amp;#125) \right)&amp;#125$$</li>
+<li><strong>有向（directed）</strong> 模型 使用带有有向边的图，他们用条件分布来表示分解。有向模型对于分布中的每一个随机变量$x_i$都包含着一个影响因子，这个组成$x_i$条件概率的影响因子被称为$x_i$的父节点，记为${ {P}_{a\varsigma } }({ {x}_{i} })$。<script type="math/tex; mode=display">p(x)=\prod\limits_{i}{p\left( { {x}_{i} }|{ {P}_{a\varsigma } }({ {x}_{i} }) \right)}</script></li>
 </ul>
 <ul>
-<li><strong>无向（undirected）</strong> 模型<br>无向模型使用带有无向边的图，它们将分解表示成一组函数：不像有有向模型那样，这些函数通常不是任何类型的概率分布。$&amp;#123\varsigma&amp;#125$ 中任何满足两两之间有边连接的顶点的集合被称为团。无向模型中的每个团$&amp;#123&amp;#123C&amp;#125^&amp;#123(i)&amp;#125&amp;#125$ 都伴随着一个因子$&amp;#123&amp;#123\phi &amp;#125^&amp;#123(i)&amp;#125&amp;#125\left( &amp;#123&amp;#123C&amp;#125^&amp;#123(i)&amp;#125&amp;#125 \right)$ 。这些因子仅仅是函数，并不是概率分布。每个因子的输出都必须是非负的，但是并没有像概率分布中那样要求因子的和或者积分为1.<br>随机变量的联合概率与所有这些因子的乘积<strong>成比例（proportional）</strong> ——这意味着因子的值越大，则可能性越大。当然，不能保证这种乘积的求和为1。所有我们需要除以一个归一化常数$Z$来得到归一化的概率分布，归一化常数$Z$被定义为 $\phi$函数乘积的所有状态的求和或积分。概率分布为：<br>$$p(x)=\frac&amp;#1231&amp;#125&amp;#123Z&amp;#125\prod\limits_&amp;#123i&amp;#125&amp;#123&amp;#123&amp;#123\phi &amp;#125^&amp;#123(i)&amp;#125&amp;#125\left( &amp;#123&amp;#123C&amp;#125^&amp;#123(i)&amp;#125&amp;#125 \right)&amp;#125$$</li>
+<li><strong>无向（undirected）</strong> 模型<br>无向模型使用带有无向边的图，它们将分解表示成一组函数：不像有有向模型那样，这些函数通常不是任何类型的概率分布。${\varsigma}$ 中任何满足两两之间有边连接的顶点的集合被称为团。无向模型中的每个团${ {C}^{(i)} }$ 都伴随着一个因子${ {\phi }^{(i)} }\left( { {C}^{(i)} } \right)$ 。这些因子仅仅是函数，并不是概率分布。每个因子的输出都必须是非负的，但是并没有像概率分布中那样要求因子的和或者积分为1.<br>随机变量的联合概率与所有这些因子的乘积<strong>成比例（proportional）</strong> ——这意味着因子的值越大，则可能性越大。当然，不能保证这种乘积的求和为1。所有我们需要除以一个归一化常数$Z$来得到归一化的概率分布，归一化常数$Z$被定义为 $\phi$函数乘积的所有状态的求和或积分。概率分布为：<script type="math/tex; mode=display">p(x)=\frac{1}{Z}\prod\limits_{i}{ { {\phi }^{(i)} }\left( { {C}^{(i)} } \right)}</script></li>
 </ul>
 <p>有向或者无向不是概率分布的特征；它是概率分布的一种特殊<strong>描述（description）</strong> 所具有的特性，而<strong>任何概率分布都可以用这两种方式进行描述。</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lau James">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AgentJames">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/27/《Deap-learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数/" itemprop="url">《Deap learning》阅读学习要点笔记（第一部分：应用数学与机器学习基础）——第二章：线性代数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T10:10:53+08:00">
-                2018-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概念区分"><a href="#概念区分" class="headerlink" title="概念区分"></a>概念区分</h1><ul>
-<li><strong>标量（scalar）</strong>: 一个单独的数</li>
-<li><strong>向量（vector）</strong>: 一个向量是一列数</li>
-<li><strong>矩阵（matrix）</strong>: 矩阵是一个二维数组</li>
-<li><strong>张量（tensor）</strong>: 若干维（一般超过两维）的数组</li>
-</ul>
-<hr>
-<h1 id="常用基础概念"><a href="#常用基础概念" class="headerlink" title="常用基础概念"></a>常用基础概念</h1><ul>
-<li><strong>广播（broadcasting）</strong>: 存在如下公式：$&amp;#123&amp;#123C&amp;#125_&amp;#123ij&amp;#125&amp;#125=&amp;#123&amp;#123A&amp;#125_&amp;#123i,j&amp;#125&amp;#125+&amp;#123&amp;#123b&amp;#125_&amp;#123j&amp;#125&amp;#125$ 正常情况下，是不符合矩阵运算规则的，但是再深度学习当中，允许矩阵和向量相加，产生另外一个矩阵。向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 和矩阵 $&amp;#123&amp;#123A&amp;#125&amp;#125$ 的每一行相加，无须在加法操作前定义一个将向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 复制到每一行而生成的矩阵。<strong>这种隐式的复制向量 $&amp;#123&amp;#123b&amp;#125&amp;#125$ 到很多位置的方式，就是广播。</strong></li>
-<li><p><strong>生成子空间</strong>：原始向量线性组合后所能抵达的点的集合（确定$Ax=b$ 是否有解，相当于确定向量 $b$ 是否在$A$列向量的生成子空间中。这个特殊的生成子空间被称为$A$的 <strong>列空间(column space)</strong> 或者 $A$ 的<strong>值域(range)</strong>）。</p>
-</li>
-<li><p><strong>线性相关</strong>与<strong>线性无关</strong>：如果一组向量中的任意一个向量都不能表示成其他向量的线性组合，那么这组向量称为<strong>线性无关(linearly independent)</strong> ，反之则是<strong>线性相关(linear dependent)</strong>。</p>
-</li>
-<li>一个列向量线性相关的方阵（$m=n$）被称为<strong>奇异的(singular)</strong>。</li>
-<li>两个向量的<strong>点积</strong>用$L^2$范数表示：$&amp;#123&amp;#123x&amp;#125^&amp;#123T&amp;#125&amp;#125y=&amp;#123&amp;#123\left| x \right|&amp;#125_&amp;#1232&amp;#125&amp;#125&amp;#123&amp;#123\left| y \right|&amp;#125_&amp;#1232&amp;#125&amp;#125\cos \theta$</li>
-<li><strong>迹运算</strong>：返回的是矩阵对角元素的和。$Tr(A)=\sum\limits_&amp;#123i&amp;#125&amp;#123&amp;#123&amp;#123A&amp;#125_&amp;#123i,i&amp;#125&amp;#125&amp;#125$</li>
-</ul>
-<hr>
-<blockquote>
-<p>后面需要什么再补充吧~暂时这一块儿就这么多</p>
-</blockquote>
 
           
         
@@ -996,7 +997,7 @@
 <li>对于 matrix，*表示矩阵乘法，运算保证矩阵乘法的法则，例子如下：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">A = np.matrix(a)</span><br><span class="line">B = np.matrix(b)</span><br><span class="line">print(&apos;A:&apos; + str(A))</span><br><span class="line"># A:[[0 1 2]</span><br><span class="line">     [3 4 5]]</span><br><span class="line"></span><br><span class="line">B:[[1 0 1]]</span><br><span class="line">B.shape:(1, 3)</span><br><span class="line">print(&apos;A:&apos; + str(A.shape))</span><br><span class="line"># A.shape:(2, 3)</span><br><span class="line">print(&apos;B:&apos; + str(B))</span><br><span class="line"># B:[[1 0 1]]</span><br><span class="line">print(&apos;shape:&apos; + str(B.shape))</span><br><span class="line"># B.shape:(1, 3)</span><br><span class="line">C = A * B</span><br><span class="line">#  Traceback (most recent call last):</span><br><span class="line">#  	File &quot;D:/IR/MLPY/Tagging/temp.py&quot;, line 37, in &lt;module&gt;</span><br><span class="line">#    	C = A * B</span><br><span class="line">#  	File &quot;D:\Anaconda\lib\site-packages\numpy\matrixlib\defmatrix.py&quot;, 	</span><br><span class="line">#        line 343, in __mul__</span><br><span class="line">#    return N.dot(self, asmatrix(other))</span><br><span class="line">#	ValueError: shapes (2,3) and (1,3) not aligned: 3 (dim 1) != 1 (dim 0)</span><br><span class="line">C = A * B.T</span><br><span class="line"># C:[[2]</span><br><span class="line">#    [8]]</span><br><span class="line"># C.shape:(2, 1)</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>np.dot()<blockquote>
 <p>官方文档：Dot product of two arrays.<br>For 2-D arrays it is equivalent to matrix multiplication, and for 1-D arrays to inner product of vectors (without complex conjugation). For N dimensions it is a sum product over the last axis of a and the second-to-last of b</p>
 </blockquote>
@@ -1009,7 +1010,7 @@
 <li><p>但是对于matrix，矩阵相乘就是矩阵相乘，严格要求，所以必须满足矩阵相乘的条件</p>
 </li>
 </ul>
-<ol start="3">
+<ol>
 <li>np.multiply()<blockquote>
 <p>multiply是numpy的ufunc函数，执行方法是对应元素相乘，而不是线性代数中的矩阵运算方式，类似于matlab中的点乘，当矩阵的维度不相同时，会根据一定的广播规则将维数扩充到一致的形式. 如果不能广播相同的size，multiply就会失败</p>
 </blockquote>
@@ -1297,7 +1298,7 @@
 <p>然后输入ifconfig，查看主机的ip地址，就可以利用secureCRT远程连接安装了（好处就是…可以复制代码，时间太长的安装，再回主机进行）下图是我的ifconfig之后查看到的ip<br><img src="http://img.blog.csdn.net/20171025140759696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这是我的ifconfig之后查看到的ip"></p>
 <h2 id="升级和配置基本环境"><a href="#升级和配置基本环境" class="headerlink" title="升级和配置基本环境"></a>升级和配置基本环境</h2><p>执行如下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt install -y python-dev python-pip python-nose gcc g++ git gfortran vim</span><br><span class="line">sudo apt install -y libopenblas-dev liblapack-dev libatlas-base-dev</span><br></pre></td></tr></table></figure>
-<p>#Nvidia-driver安装<br>之前一周本来装好了一个，结果由于显卡没有供电，还特意去买了一个电源，结果还是不行，主板不合适，后来不得不换一个机箱。<br>新机箱新主板，空间也大了，插显卡轻松许多…主要是能正常工作！！！<br>安装驱动很简单，建议在NVIDIA官网<a href="http://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">（显卡型号查询链接）</a>查询自己的机子对应的版本号：注意产品类型和产品家族，因为产品系列在服务器中是查不到的。下图是我查的对应的驱动型号（即使安错了也无所谓，可以无痛卸载的嘛）<br><img src="http://img.blog.csdn.net/20171115100856111?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h1 id="Nvidia-driver安装"><a href="#Nvidia-driver安装" class="headerlink" title="Nvidia-driver安装"></a>Nvidia-driver安装</h1><p>之前一周本来装好了一个，结果由于显卡没有供电，还特意去买了一个电源，结果还是不行，主板不合适，后来不得不换一个机箱。<br>新机箱新主板，空间也大了，插显卡轻松许多…主要是能正常工作！！！<br>安装驱动很简单，建议在NVIDIA官网<a href="http://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener">（显卡型号查询链接）</a>查询自己的机子对应的版本号：注意产品类型和产品家族，因为产品系列在服务器中是查不到的。下图是我查的对应的驱动型号（即使安错了也无所谓，可以无痛卸载的嘛）<br><img src="http://img.blog.csdn.net/20171115100856111?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvVUVTVENfVg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>然后就有三种方式安装驱动：</p>
 <ul>
 <li>方法1：<code>apt-get</code>方式<br>执行如下代码：</li>
@@ -1979,6 +1980,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
